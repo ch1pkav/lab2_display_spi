@@ -1,1 +1,1 @@
-# Lab 1: GPS UART
+# Lab 2: SPI Display
