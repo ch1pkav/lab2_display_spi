@@ -64,6 +64,8 @@ void app_main() {
 // GPS UART initialization
 static void gps_uart_init() {
     HAL_UARTEx_ReceiveToIdle_DMA(&huart1, s_uart1_rx_buf, sizeof(s_uart1_rx_buf));
+    const char* req = "$CCGNQ,GGA\r\n";
+    HAL_UART_Transmit(&huart1, (const uint8_t*)req, strlen(req), UINT32_MAX);
 }
 
 // GPS UART handler
